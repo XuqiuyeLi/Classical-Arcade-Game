@@ -50,7 +50,9 @@ const Player = function() {
 };
 
 Player.prototype.update = function(dt) {
-    // for additional functions..
+    if (this.y < 80) {
+    this.reset();
+  }
 };
 
 Player.prototype.render = function() {
@@ -58,21 +60,28 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(input) {
-    // take the inputs of entered key
-    if (this.y < 80) {
-        this.reset();
-        // need a player.prototype.reset();
-    } else if (input === 'left' && this.x > 40) {
-        // only changes the location if x > 60
-        this.x = this.x - 30;
-    } else if (input === 'right' && this.x < 400) {
-        this.x = this.x + 30;
-    } else if (input === 'down' && this.y < 400) {
-        this.y = this.y + 50;
-    } else if (input === 'up' && this.y > 80) {
-        this.y = this.y - 50;
-        // the location remains the same when the player tries to move off the screen.
-    }
+    switch (input) {
+    case "left":
+      if (this.x > 40) {
+        this.x -= 30;
+      }
+      break;
+    case "right":
+      if (this.x < 400) {
+        this.x += 30;
+      }
+      break;
+    case "up":
+      if (this.y > 80) {
+        this.y -= 50;
+      }
+      break;
+    case "down":
+      if (this.x < 400) {
+        this.y += 50;
+      }
+      break;
+  }
 };
 
 document.addEventListener('keyup', function(e) {
