@@ -1,4 +1,4 @@
-var Enemy = function(x, y) {
+const Enemy = function(x, y) {
     "use strict";
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
@@ -38,7 +38,7 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var Player = function() {
+const Player = function() {
     "use strict";
     this.sprite = 'images/char-cat-girl.png';
     this.x = 200;
@@ -75,7 +75,7 @@ Player.prototype.handleInput = function(input) {
 };
 
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
@@ -90,16 +90,16 @@ Player.prototype.reset = function() {
     this.y = 400;
 }
 
-var player = new Player();
+const player = new Player();
 
-var amy = new Enemy(-150, 150);
-var ben = new Enemy(-400, 200);
-var cathy = new Enemy(-200, 100);
-var daniel = new Enemy(-300, 250);
-var elena = new Enemy(-550, 180);
-var frank = new Enemy(-50, 180);
+const amy = new Enemy(-150, 150);
+const ben = new Enemy(-400, 200);
+const cathy = new Enemy(-200, 100);
+const daniel = new Enemy(-300, 250);
+const elena = new Enemy(-550, 180);
+const frank = new Enemy(-50, 180);
 
-var allEnemies = [
+const allEnemies = [
     amy,
     ben,
     cathy,
