@@ -4,8 +4,8 @@ const Enemy = function(x, y) {
     this.x = x;
     this.y = y;
     // set x,y coordinate for each enemy object location
-    this.width = 88;
-    this.height = 67;
+    this.width = 80;
+    this.height = 60;
     // make enemy as a rectangular object for checking collisions
     this.speed = 100 + 50 * Math.random();
     // generate random speed for each enemy
@@ -21,7 +21,8 @@ Enemy.prototype.update = function(dt) {
 };
 
 Enemy.prototype.reset = function() {
-    this.x = 0;
+    //reset the enemy from random negtive values
+    this.x = Math.floor(Math.random()*200) - 400;
 };
 Enemy.prototype.checkCollisions = function() {
     if (this.x < player.x + player.width &&
@@ -40,6 +41,7 @@ Enemy.prototype.render = function() {
 
 const Player = function() {
     "use strict";
+    //you can change the player img
     this.sprite = 'images/char-cat-girl.png';
     this.x = 200;
     this.y = 400;
@@ -48,7 +50,7 @@ const Player = function() {
 };
 
 Player.prototype.update = function(dt) {
-    // Not sure what I should include here..
+    // for additional functions..
 };
 
 Player.prototype.render = function() {
@@ -57,7 +59,6 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(input) {
     // take the inputs of entered key
-
     if (this.y < 80) {
         this.reset();
         // need a player.prototype.reset();
