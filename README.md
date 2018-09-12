@@ -5,7 +5,7 @@
 ### Run the Game
 _In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies._
 
-* Download the Arcade Game file folder from [here](https://github.com/XuqiuyeLi/frontend-nanodegree-arcade-game)
+* Download the Arcade Game file folder from [here](https://github.com/XuqiuyeLi/Udacity_Arcade_Game)
 * Open the html file on your browser
 * Now you can run the game!
 
